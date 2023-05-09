@@ -29,7 +29,12 @@ public:
     dto->message = "Hello World!";
     return createDtoResponse(Status::CODE_200, dto);
   }
-  
+    ENDPOINT("GET", "/about", about) {
+    auto dto = MyDto::createShared();
+    dto->statusCode = 200;
+    dto->message = "About page";
+    return createDtoResponse(Status::CODE_200, dto);
+  }
   // TODO Insert Your endpoints here !!!
   
 };
